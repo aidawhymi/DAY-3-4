@@ -4,7 +4,7 @@ require 'functions.php';
 $produk=query("SELECT * FROM produk ORDER BY id ASC");
 
 
-// ketika tombol cari ditekan
+
 if (isset($_POST["cari"])) {
 	$produk= cari($_POST["keyword"]);
 }
