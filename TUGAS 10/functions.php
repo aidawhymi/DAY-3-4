@@ -2,7 +2,7 @@
 
 $conn= mysqli_connect("localhost", "root", "", "arkademy");
 
-// function selalu pake return
+
 function query($query){ 
 	global $conn;
 	$result= mysqli_query($conn, $query);
@@ -15,14 +15,13 @@ function query($query){
 
 function tambah($data){
 	global $conn;
-	// ambil data dari tiap elemen form
-	// html special chars biar kalau nerima script html, scriptnya ga dieksekusi
+	
 	$nama_produk= htmlspecialchars($data["nama_produk"]); 
 	$keterangan= htmlspecialchars($data["keterangan"]);
 	$harga= htmlspecialchars($data["harga"]);
 	$jumlah= htmlspecialchars($data["jumlah"]);
 	
-	//query insert data
+	
 	$query = "INSERT INTO produk
 				VALUES
 				('','$nama_produk', '$keterangan', '$harga', '$jumlah')
