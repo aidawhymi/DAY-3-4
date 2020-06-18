@@ -7,10 +7,7 @@ $id=$_GET["id"];
 $prod= query("SELECT * FROM produk WHERE id= $id")[0];	
 
 if (isset($_POST["submit"])) {
-	
-	
 
-	
 	if (ubah($_POST)> 0) {
 		echo "
 		<script>
