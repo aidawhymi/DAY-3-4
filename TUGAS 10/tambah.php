@@ -2,12 +2,7 @@
 require 'functions.php';
 
 if (isset($_POST["submit"])) {
-	
-	
 
-	//cek data berhasil terinput atau tidak
-	//pas di vardump, kalau data berhasil dimasukin nilai mysqliaffectedrowsnya bernilai 1,
-	// kalau gagal nilainya -1
 	if (tambah($_POST)> 0) {
 		echo "
 		<script>
@@ -35,7 +30,7 @@ if (isset($_POST["submit"])) {
 <form action=" " method="POST">
 	<ul>
 		<li>
-			<!-- name pada input disamain dengan code field di database -->
+			
 			<label for="nama_produk">Nama Produk 			:</label>
 			<input type="text" name="nama_produk" id="nama_produk" required> 
 		</li> <br>
