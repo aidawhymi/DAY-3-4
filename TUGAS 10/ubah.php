@@ -3,17 +3,14 @@ require 'functions.php';
 
 $id=$_GET["id"];
 
-// query data berdasarkan id
-// ditambah [0] karena query merupakan array angka/?, jadi yg keluar valuenya 0
+
 $prod= query("SELECT * FROM produk WHERE id= $id")[0];	
 
 if (isset($_POST["submit"])) {
 	
 	
 
-	//cek data berhasil terinput atau tidak
-	//pas di vardump, kalau data berhasil dimasukin nilai mysqliaffectedrowsnya bernilai 1,
-	// kalau gagal nilainya -1
+	
 	if (ubah($_POST)> 0) {
 		echo "
 		<script>
@@ -42,7 +39,7 @@ if (isset($_POST["submit"])) {
 	<input type="hidden" name="id" value="<?= $prod["id"];?>">
 	<ul>
 		<li>
-			<!-- name pada input disamain dengan code field di database -->
+			
 			<label for="nama_produk">Nama Produk 			:</label>
 			<input type="text" name="nama_produk" id="nama_produk" required value="<?= $prod["nama_produk"];  ?>"> 
 		</li> <br>
